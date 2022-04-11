@@ -6,16 +6,22 @@ import Character from './Character';
 
 function Location() {
   const [residents, setResidents] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { id } = useParams();
   async function fetchData() {
-    const { residents } = await getLocation(id);
-    setResidents(residents);
+    try {
+      const { residents } = await getLocation(id);
+      setResidents(residents);
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
+    }
   }
   useEffect(() => {
     fetchData();
   }, [id]);
 
-  return (
+  const template = (
     <DefaultLayout>
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 ">
         {residents.map((resident) => (
@@ -24,6 +30,8 @@ function Location() {
       </div>
     </DefaultLayout>
   );
+
+  return <>{loading ? <p>Loading...</p> : template}</>;
 }
 
 export default Location;

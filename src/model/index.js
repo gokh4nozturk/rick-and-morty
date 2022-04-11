@@ -10,13 +10,15 @@ export class Location {
 
 export class Character {
   constructor(character) {
-    this.id = character.id;
-    this.image = character.image;
-    this.name = character.name;
-    this.status = character.status;
-    this.species = character.species;
-    this.type = character.type;
-    this.gender = character.gender;
-    this.originName = character.origin?.name;
+    if (character) {
+      this.id = character.id;
+      this.image = character.image;
+      this.name = character.name;
+      this.status = character.status;
+      this.species = character.species;
+      this.type = character.type;
+      this.gender = character.gender;
+      this.originName = character.origin?.name;
+    }
   }
 }

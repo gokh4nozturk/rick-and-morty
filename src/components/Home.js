@@ -5,16 +5,23 @@ import { getLocations } from '../services';
 
 function Home() {
   const [locations, setLocations] = useState([]);
+  const [loading, setLoading] = useState(true);
   async function fetchData() {
-    const response = await getLocations();
-    setLocations(response);
+    try {
+      const locations = await getLocations();
+      setLocations(locations);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
   }
   useEffect(() => {
     fetchData();
   }, []);
-  return (
+
+  const template = (
     <DefaultLayout>
-      <ul className="w-full min-w-max">
+      <ul className="w-full min-w-max ">
         {locations.map((location) => (
           <Link key={location.id} to={`/locations/${location.id}`}>
             <li className="list-link">
@@ -27,6 +34,8 @@ function Home() {
       </ul>
     </DefaultLayout>
   );
+
+  return <>{loading ? <p>Loading...</p> : template}</>;
 }
 
 export default Home;
