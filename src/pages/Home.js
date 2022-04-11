@@ -12,7 +12,7 @@ function Home() {
       setLocations(locations);
       setLoading(false);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }
   useEffect(() => {

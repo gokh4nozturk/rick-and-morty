@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getLocation } from '../services';
 import DefaultLayout from '../layouts/Default.js';
-import Character from './Character';
+import Character from '../components/Character';
 
 function Location() {
   const [residents, setResidents] = useState([]);
