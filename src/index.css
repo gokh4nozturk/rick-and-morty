@@ -39,4 +39,7 @@
     flex: 3 1 0%;
     @apply relative p-3 flex flex-col gap-1;
   }
+  .pagination-button {
+    @apply bg-green-400 hover:bg-green-600 text-white font-bold py-2 px-4 rounded disabled:bg-slate-400;
+  }
 }

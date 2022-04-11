@@ -19,6 +19,10 @@ function Home() {
       console.error(error);
     }
   }
+  function pageChanger(link) {
+    const page = link.split('=').pop();
+    fetchData(page);
+  }
   useEffect(() => {
     fetchData();
   }, []);
@@ -36,7 +40,7 @@ function Home() {
           </Link>
         ))}
       </ul>
-      <Pagination pagination={pagination} />
+      <Pagination pagination={pagination} pageChanger={pageChanger} />
     </DefaultLayout>
   );
 
