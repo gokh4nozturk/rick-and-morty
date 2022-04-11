@@ -7,7 +7,7 @@
     @apply max-w-6xl mx-auto px-6 antialiased;
   }
   .site-header {
-    @apply flex items-center justify-center px-6 py-4 
+    @apply flex items-center justify-between  px-6 py-4 
  font-bold border-b border-green-400 mb-6;
   }
   .main {
@@ -23,8 +23,8 @@
     @apply w-full;
   }
   .card {
-    box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px,
-      rgb(0 0 0 / 6%) 0px 2px 4px -1px;
+    box-shadow: rgb(100 182 95 / 10%) 0px 4px 6px -1px,
+      rgb(100 182 95 / 6%) 0px 2px 4px -1px;
     @apply flex rounded-lg max-h-56 overflow-hidden max-w-xl;
   }
   .card-image {

@@ -1,12 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Header from '../components/Header';
 
 function DefaultLayout({ children }) {
   return (
     <div className="site-container">
-      <header className="site-header">
-        <Link to="/">Home</Link>
-      </header>
+      <Header />
       <main className="main">{children}</main>
     </div>
   );

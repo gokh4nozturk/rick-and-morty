@@ -35,7 +35,6 @@ function Character({ resident }) {
             <span className={getStatus() + ' w-2 h-2 rounded-full ml-1'} />
           </div>
           <dl className="text-xs font-medium flex items-center row-start-2">
-            {character.originName}
             <dt className="sr-only">Location</dt>
             <dd className="flex items-center">
               <svg
@@ -53,6 +52,7 @@ function Character({ resident }) {
                 <path d="M14 11a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
               </svg>
             </dd>
+            {character.originName}
           </dl>
           <div className="">{character.type}</div>
           <div className=""> {character.gender} </div>
