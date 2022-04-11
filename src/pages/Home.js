@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import DefaultLayout from '../layouts/Default.js';
 import { getLocations } from '../services';
@@ -8,8 +8,11 @@ function Home() {
   const [locations, setLocations] = useState([]);
   const [pagination, setPagination] = useState({});
   const [loading, setLoading] = useState(true);
-  async function fetchData(page = 1) {
+  const [searchParams, setSearchParams] = useSearchParams({ page: '1' });
+
+  async function fetchData() {
     try {
+      const page = searchParams.get('page');
       const payload = { page };
       const { locations, pagination } = await getLocations(payload);
       setLocations(locations);
@@ -21,11 +24,11 @@ function Home() {
   }
   function pageChanger(link) {
     const page = link.split('=').pop();
-    fetchData(page);
+    setSearchParams({ page });
   }
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [searchParams]);
 
   const template = (
     <DefaultLayout>
@@ -33,7 +36,7 @@ function Home() {
         <li className="list-header">
           <p className="text-left"> Type </p>
           <p className="text-center"> Dimension </p>
-          <p className="text-right">Residents Number</p>
+          <p className="text-right"> Residents Number </p>
         </li>
         {locations.length ? (
           locations.map((location) => (
