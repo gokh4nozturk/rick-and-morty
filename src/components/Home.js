@@ -5,11 +5,11 @@ import { getLocations } from '../services';
 
 function Home() {
   const [locations, setLocations] = useState([]);
+  async function fetchData() {
+    const response = await getLocations();
+    setLocations(response);
+  }
   useEffect(() => {
-    async function fetchData() {
-      const response = await getLocations();
-      setLocations(response);
-    }
     fetchData();
   }, []);
   return (

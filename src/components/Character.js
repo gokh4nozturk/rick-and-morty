@@ -5,12 +5,13 @@ function Character({ resident }) {
   const id = resident.split('/').pop();
   const [character, setCharacter] = useState({});
   const [origin, setOrigin] = useState({});
+
+  async function fetchData() {
+    const character = await getCharacter(id);
+    setCharacter(character);
+    setOrigin(character.origin);
+  }
   useEffect(() => {
-    async function fetchData() {
-      const character = await getCharacter(id);
-      setCharacter(character);
-      setOrigin(character.origin);
-    }
     fetchData();
   }, [id]);
   const getStatus = () => {

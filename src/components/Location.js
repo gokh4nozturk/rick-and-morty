@@ -7,11 +7,11 @@ import Character from './Character';
 function Location() {
   const [residents, setResidents] = useState([]);
   const { id } = useParams();
+  async function fetchData() {
+    const { residents } = await getLocation(id);
+    setResidents(residents);
+  }
   useEffect(() => {
-    async function fetchData() {
-      const { residents } = await getLocation(id);
-      setResidents(residents);
-    }
     fetchData();
   }, [id]);
 
