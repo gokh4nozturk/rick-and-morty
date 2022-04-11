@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import NoMatch from './components/NoMatch';
 import Home from './pages/Home';
 import Location from './pages/Location';
 
@@ -8,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/locations/:id" element={<Location />} />
+        <Route path="*" element={<NoMatch />} />
       </Routes>
     </>
   );
