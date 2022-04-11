@@ -4,12 +4,10 @@ import { getCharacter } from '../services';
 function Character({ resident }) {
   const id = resident.split('/').pop();
   const [character, setCharacter] = useState({});
-  const [origin, setOrigin] = useState({});
 
   async function fetchData() {
     const character = await getCharacter(id);
     setCharacter(character);
-    setOrigin(character.origin);
   }
   useEffect(() => {
     fetchData();
@@ -37,7 +35,7 @@ function Character({ resident }) {
               <span className={getStatus() + ' w-2 h-2 rounded-full ml-1'} />
             </div>
             <dl className="text-xs font-medium flex items-center row-start-2">
-              {origin.name}
+              {character.originName}
               <dt className="sr-only">Location</dt>
               <dd className="flex items-center">
                 <svg

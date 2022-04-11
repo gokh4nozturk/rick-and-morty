@@ -20,7 +20,7 @@ function Home() {
             <li className="list-link">
               <span className="text-left"> {location.type} </span>
               <span className="text-center"> {location.dimension} </span>
-              <span className="text-right">{location.residents.length}</span>
+              <span className="text-right">{location.residentsNumber}</span>
             </li>
           </Link>
         ))}
