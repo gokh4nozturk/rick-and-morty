@@ -11,7 +11,6 @@
  font-bold border-b border-green-400 mb-6;
   }
   .main {
-    min-height: calc(50vh - 60px);
     @apply mb-20 flex items-center justify-center flex-col;
   }
   .list-link {

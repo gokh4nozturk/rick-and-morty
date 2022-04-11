@@ -24,9 +24,13 @@ function Location() {
   const template = (
     <DefaultLayout>
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 ">
-        {residents.map((resident) => (
-          <Character key={resident} resident={resident} />
-        ))}
+        {residents.length ? (
+          residents.map((resident) => (
+            <Character key={resident} resident={resident} />
+          ))
+        ) : (
+          <p>No characters found</p>
+        )}
       </div>
     </DefaultLayout>
   );

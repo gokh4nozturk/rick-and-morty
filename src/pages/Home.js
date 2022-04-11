@@ -30,15 +30,19 @@ function Home() {
   const template = (
     <DefaultLayout>
       <ul className="w-full min-w-max ">
-        {locations.map((location) => (
-          <Link key={location.id} to={`/locations/${location.id}`}>
-            <li className="list-link">
-              <span className="text-left"> {location.type} </span>
-              <span className="text-center"> {location.dimension} </span>
-              <span className="text-right">{location.residentsNumber}</span>
-            </li>
-          </Link>
-        ))}
+        {locations.length ? (
+          locations.map((location) => (
+            <Link key={location.id} to={`/locations/${location.id}`}>
+              <li className="list-link">
+                <span className="text-left"> {location.type} </span>
+                <span className="text-center"> {location.dimension} </span>
+                <span className="text-right">{location.residentsNumber}</span>
+              </li>
+            </Link>
+          ))
+        ) : (
+          <p>No locations found</p>
+        )}
       </ul>
       <Pagination pagination={pagination} pageChanger={pageChanger} />
     </DefaultLayout>
