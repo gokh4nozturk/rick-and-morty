@@ -14,13 +14,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "prepare": "husky install",
+    "prettier:write": "prettier --write '**/*.{js,jsx}'",
+    "precommit": "npm run prettier:write"
   },
   "browserslist": {
     "production": [
@@ -44,6 +40,6 @@
     "tailwindcss": "^3.0.23"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": "npm run precommit"
   }
 }
