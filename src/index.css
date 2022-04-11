@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .site-container {
+    @apply max-w-6xl mx-auto px-6 antialiased;
+  }
+  .site-header {
+    @apply flex items-center justify-center px-6 py-4 
+ font-bold border-b border-green-400 mb-6;
+  }
+  .main {
+    min-height: calc(50vh - 60px);
+    @apply mb-20 flex items-center justify-center;
+  }
+}
