@@ -1,9 +1,12 @@
-import { Location, Character } from '../model';
+import { Location, Character, Pagination } from '../model';
 import axios from '../plugins/axios';
 
-export const getLocations = async () => {
-  const { data } = await axios.get('location');
-  return data.results.map((result) => new Location(result));
+export const getLocations = async (params) => {
+  const { data } = await axios.get('location', { params });
+  return {
+    locations: data.results.map((location) => new Location(location)),
+    pagination: new Pagination(data.info)
+  };
 };
 
 export const getLocation = async (id) => {

@@ -22,3 +22,12 @@ export class Character {
     }
   }
 }
+
+export class Pagination {
+  constructor({ count, pages, next, prev }) {
+    this.count = count;
+    this.pages = pages;
+    this.next = next;
+    this.prev = prev;
+  }
+}
