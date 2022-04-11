@@ -14,4 +14,29 @@
     min-height: calc(50vh - 60px);
     @apply mb-20 flex items-center justify-center;
   }
+  .list-link {
+    @apply flex justify-between py-2 px-4 border-b border-slate-500;
+  }
+  .list-link:hover {
+    @apply bg-green-100 border-green-400;
+  }
+  .list-link * {
+    @apply w-full;
+  }
+  .card {
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px,
+      rgb(0 0 0 / 6%) 0px 2px 4px -1px;
+    @apply flex rounded-lg max-h-56 overflow-hidden max-w-xl;
+  }
+  .card-image {
+    flex: 2 1 0%;
+    @apply w-full;
+  }
+  .card-image img {
+    @apply w-full h-full m-0 opacity-100 transition-opacity object-center object-cover rounded-bl-lg rounded-tl-lg;
+  }
+  .card-content {
+    flex: 3 1 0%;
+    @apply relative p-3 flex flex-col gap-1;
+  }
 }
