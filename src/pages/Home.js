@@ -30,6 +30,11 @@ function Home() {
   const template = (
     <DefaultLayout>
       <ul className="w-full min-w-max ">
+        <li className="list-header">
+          <p className="text-left"> Type </p>
+          <p className="text-center"> Dimension </p>
+          <p className="text-right">Residents Number</p>
+        </li>
         {locations.length ? (
           locations.map((location) => (
             <Link key={location.id} to={`/locations/${location.id}`}>
