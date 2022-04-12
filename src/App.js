@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import NoMatch from './components/NoMatch';
-import Home from './pages/Home';
-import Location from './pages/Location';
+import Home from './components/pages/Home';
+import Location from './components/pages/Location';
 
 function App() {
   return (

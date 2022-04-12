@@ -1,8 +1,8 @@
 import { Link, useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import DefaultLayout from '../layouts/Default.js';
-import { getLocations } from '../services';
-import Pagination from '../components/Pagination.js';
+import DefaultLayout from '../../layouts/Default.js';
+import { getLocations } from '../../services';
+import Pagination from '../Pagination.js';
 
 function Home() {
   const [locations, setLocations] = useState([]);
@@ -36,7 +36,7 @@ function Home() {
         <li className="list-header">
           <p className="text-left"> Type </p>
           <p className="text-center"> Dimension </p>
-          <p className="text-right"> Residents Number </p>
+          <p className="text-right"> Residents Count </p>
         </li>
         {locations.length ? (
           locations.map((location) => (
@@ -44,7 +44,7 @@ function Home() {
               <li className="list-link">
                 <span className="text-left"> {location.type} </span>
                 <span className="text-center"> {location.dimension} </span>
-                <span className="text-right">{location.residentsNumber}</span>
+                <span className="text-right">{location.residentsCount}</span>
               </li>
             </Link>
           ))

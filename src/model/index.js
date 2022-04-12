@@ -4,7 +4,7 @@ export class Location {
     this.dimension = location.dimension;
     this.type = location.type;
     this.residents = location.residents;
-    this.residentsNumber = this.residents?.length;
+    this.residentsCount = this.residents?.length;
   }
 }
 
